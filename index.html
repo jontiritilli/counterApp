@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-#displayArea{
-  height: 50vh;
-  width: 50vw;
-  background-color: pink;
-  position: relative;
-}
+	<script type="text/javascript">
+		var mySmallNumber = 5;
+		var myString = "5";
+		var	myBigNumber = 255;
 
-#displayArea > span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+		var output1 = mySmallNumber == myString;
+		var output2 = mySmallNumber === myString;
+		var output3 = mySmallNumber < myBigNumber;
+		var output4 = mySmallNumber > myBigNumber;
 
+		console.log('My output 1 = ', output1, output2, output3, output4)
+
+		var gameNumber = 64;
+		var userInput1 = 109;
+		var userInput2 = 64;
+
+		if (userInput1>gameNumber) {
+			console.log('The number is too high')
+		}
+		if (userInput1<gameNumber) {
+			console.log('The number is too low')
+		}
+		if (userInput1<1 || userInput1>100) {console.log('The number is out of range')}
+			else {
+				console.log('The number is in range')
+			}
+		if (userInput2 == gameNumber){
+			console.log('You have guessed the correct number')
+		} 
+		else {
+			console.log('Try again')
+		}
+		var date = new Date(); //set date equal to the current date
+		var dayOfWeek = date.getDay(); //surmise the day from current date
+		var message = ''; //create empty string
+		switch (dayOfWeek){
+			case 1:
+				message = 'It is the weekend!'
+			break;
+			case 2:
+				message = 'It is the weekday!'
+				break;
+			case 3:
+				message = 'It is the weekday!'
+			case 4:
+				message = 'It is halfway over, weekday!'
+				break;
+			case 5:
+				message = 'It is the weekday!'
+				break;
+			case 6:
+				message = 'It is the weekday!'
+				break;
+			case 7:
+				message = 'It is the weekend!'
+			break;
+		}
+		console.log(message);
+	</script>
 </head>
 <body>
-  <div id="displayArea">
-    <span>0</span>
-  </div>
+
 </body>
-<script type="text/javascript">
-/* link to how the app should behave when you get it to work:
-http://youtu.be/TtMHhqrYf90
-*/
-
-	var counter = 0;
-	var timerID = null;
-	$("#displayArea").on('click',/*give the click handler a function that will increase the counter*/);
-	$("#displayArea").on('mouseout',handleMouseout);
-	$("#displayArea").on('mouseover',handleMouseover);
-
-
-
-	function increaseCounter(){
-	  //increase the counter global variable by 1, then save the value back into counter
-	  //call the function that updates the span in the displayArea div
-	}
-
-	function decreaseCounter(){
-	  {//if the counter global variable is less than or equal to 0
-	    //call the handleMouseover function
-	    //set the counter global variable to 0
-	    //exit the function
-	  }
-	  //decrease the counter by one, and save the result back into the counter variable
-	  //call the updateDisplay function
-	}
-
-	function updateDisplay(){
-	  //change the text of the span inside the div.  The div has an id of displayArea.  The text will be changed to the value currently inside the global variable of counter
-	}
-
-	function handleMouseout()
-	{
-	  //call the setInterval function (it is a default function, not one defined here).  pass in the following 2 parameters: the name of the function that decreases the counter, and 500.   setInterval returns a value, save that value in the global variable "timerID"
-	}
-
-	function handleMouseover(){
-		//call the clearTimeout function (not defined here, it is available by default.  pass in the global variable timerID as an argument
-	}	
-</script>
 </html>
